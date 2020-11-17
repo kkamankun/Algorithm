@@ -1,6 +1,7 @@
 import string  # 스트링 모듈 임포트
 import random  # 랜덤 모듈 임포트
 import timeit  # 함수 및 코드 실행시간 측정
+import sys  # sys 모듈 임포트
 
 
 def lcs(a, b, k, j, matrix):  # top-down, memoized
@@ -25,6 +26,7 @@ def lcs(a, b, k, j, matrix):  # top-down, memoized
         return matrix[k - 1][j - 1]
 
 
+sys.setrecursionlimit(10000)
 n = int(input("Size: "))  # 생성할 문자열의 길이
 string_pool = string.ascii_uppercase  # 대문자만 이용하여 문자열 생성
 X = ""
